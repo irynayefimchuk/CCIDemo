@@ -105,6 +105,7 @@ export default function ModalEncountersDownload() {
               className="w-full h-[32px] pl-8 pr-3 bg-[var(--background)] rounded-[var(--radius-button)] border-0 text-foreground font-[family-name:var(--font-open-sans)] text-[length:var(--text-xs)] placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring/30"
             />
           </div>
+          {/* Provider filter */}
           <select
             value={providerFilter}
             onChange={e => { setProviderFilter(e.target.value); setPage(1); }}
@@ -136,31 +137,73 @@ export default function ModalEncountersDownload() {
         <table className="w-full border-collapse min-w-[1100px]">
           <thead className="sticky top-0 z-10">
             <tr className="bg-[var(--background)]">
-              <th className="text-left px-3 py-[6px] border-b border-border"><SortHeader col="provider" label="Provider" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} /></th>
-              <th className="text-left px-3 py-[6px] border-b border-border"><SortHeader col="encounter_id" label="EncounterID" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} /></th>
-              <th className="text-left px-3 py-[6px] border-b border-border"><SortHeader col="surgical_case_id" label="SurgicalCaseID" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} /></th>
-              <th className="text-left px-3 py-[6px] border-b border-border"><SortHeader col="or_proc_id" label="ORProcID" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} /></th>
-              <th className="text-left px-3 py-[6px] border-b border-border"><SortHeader col="supply_item" label="SupplyItem" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} /></th>
-              <th className="text-right px-3 py-[6px] border-b border-border"><SortHeader col="cost" label="Cost" align="right" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} /></th>
-              <th className="text-left px-3 py-[6px] border-b border-border"><SortHeader col="cpt_code" label="CPT" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} /></th>
-              <th className="text-left px-3 py-[6px] border-b border-border"><SortHeader col="facility_code" label="Facility" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} /></th>
-              <th className="text-left px-3 py-[6px] border-b border-border"><SortHeader col="surgery_end" label="SurgeryEndDTS" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} /></th>
-              <th className="text-left px-3 py-[6px] border-b border-border"><SortHeader col="opportunity_id" label="OpportunityID" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} /></th>
+              <th className="text-left px-3 py-[6px] border-b border-border">
+                <SortHeader col="provider" label="Provider" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} />
+              </th>
+              <th className="text-left px-3 py-[6px] border-b border-border">
+                <SortHeader col="encounter_id" label="EncounterID" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} />
+              </th>
+              <th className="text-left px-3 py-[6px] border-b border-border">
+                <SortHeader col="surgical_case_id" label="SurgicalCaseID" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} />
+              </th>
+              <th className="text-left px-3 py-[6px] border-b border-border">
+                <SortHeader col="or_proc_id" label="ORProcID" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} />
+              </th>
+              <th className="text-left px-3 py-[6px] border-b border-border">
+                <SortHeader col="supply_item" label="SupplyItem" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} />
+              </th>
+              <th className="text-right px-3 py-[6px] border-b border-border">
+                <SortHeader col="cost" label="Cost" align="right" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} />
+              </th>
+              <th className="text-left px-3 py-[6px] border-b border-border">
+                <SortHeader col="cpt_code" label="CPT" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} />
+              </th>
+              <th className="text-left px-3 py-[6px] border-b border-border">
+                <SortHeader col="facility_code" label="Facility" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} />
+              </th>
+              <th className="text-left px-3 py-[6px] border-b border-border">
+                <SortHeader col="surgery_end" label="SurgeryEndDTS" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} />
+              </th>
+              <th className="text-left px-3 py-[6px] border-b border-border">
+                <SortHeader col="opportunity_id" label="OpportunityID" sortCol={sortCol} sortDir={sortDir} onSort={toggleSort} />
+              </th>
             </tr>
           </thead>
           <tbody>
             {paged.map((row) => (
               <tr key={row.encounter_id} className="bg-card hover:bg-muted/50 transition-colors border-b border-border/60">
-                <td className="px-3 py-[5px]"><span className="font-[family-name:var(--font-open-sans)] text-[13px] text-foreground">{row.provider}</span></td>
-                <td className="px-3 py-[5px]"><span className="font-[family-name:var(--font-open-sans)] text-[13px] text-foreground font-semibold">{row.encounter_id}</span></td>
-                <td className="px-3 py-[5px]"><span className="font-[family-name:var(--font-open-sans)] text-[13px] text-foreground font-mono">{row.surgical_case_id}</span></td>
-                <td className="px-3 py-[5px]"><span className="font-[family-name:var(--font-open-sans)] text-[13px] text-muted-foreground font-mono">{row.or_proc_id}</span></td>
-                <td className="px-3 py-[5px] max-w-[200px]"><span className="font-[family-name:var(--font-open-sans)] text-[13px] text-foreground truncate block">{row.supply_item}</span></td>
-                <td className="px-3 py-[5px] text-right"><span className="font-[family-name:var(--font-open-sans)] text-[13px] text-foreground font-semibold">${row.cost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span></td>
-                <td className="px-3 py-[5px]"><span className="font-[family-name:var(--font-open-sans)] text-[12px] text-muted-foreground font-mono">{row.cpt_code}</span></td>
-                <td className="px-3 py-[5px]"><span className="font-[family-name:var(--font-open-sans)] text-[12px] text-muted-foreground font-mono">{row.facility_code}</span></td>
-                <td className="px-3 py-[5px]"><span className="font-[family-name:var(--font-open-sans)] text-[12px] text-muted-foreground">{row.surgery_end}</span></td>
-                <td className="px-3 py-[5px]"><span className="font-[family-name:var(--font-open-sans)] text-[12px] text-muted-foreground font-mono">{row.opportunity_id}</span></td>
+                <td className="px-3 py-[5px]">
+                  <span className="font-[family-name:var(--font-open-sans)] text-[13px] text-foreground">{row.provider}</span>
+                </td>
+                <td className="px-3 py-[5px]">
+                  <span className="font-[family-name:var(--font-open-sans)] text-[13px] text-foreground font-semibold">{row.encounter_id}</span>
+                </td>
+                <td className="px-3 py-[5px]">
+                  <span className="font-[family-name:var(--font-open-sans)] text-[13px] text-foreground font-mono">{row.surgical_case_id}</span>
+                </td>
+                <td className="px-3 py-[5px]">
+                  <span className="font-[family-name:var(--font-open-sans)] text-[13px] text-muted-foreground font-mono">{row.or_proc_id}</span>
+                </td>
+                <td className="px-3 py-[5px] max-w-[200px]">
+                  <span className="font-[family-name:var(--font-open-sans)] text-[13px] text-foreground truncate block">{row.supply_item}</span>
+                </td>
+                <td className="px-3 py-[5px] text-right">
+                  <span className="font-[family-name:var(--font-open-sans)] text-[13px] text-foreground font-semibold">
+                    ${row.cost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  </span>
+                </td>
+                <td className="px-3 py-[5px]">
+                  <span className="font-[family-name:var(--font-open-sans)] text-[12px] text-muted-foreground font-mono">{row.cpt_code}</span>
+                </td>
+                <td className="px-3 py-[5px]">
+                  <span className="font-[family-name:var(--font-open-sans)] text-[12px] text-muted-foreground font-mono">{row.facility_code}</span>
+                </td>
+                <td className="px-3 py-[5px]">
+                  <span className="font-[family-name:var(--font-open-sans)] text-[12px] text-muted-foreground">{row.surgery_end}</span>
+                </td>
+                <td className="px-3 py-[5px]">
+                  <span className="font-[family-name:var(--font-open-sans)] text-[12px] text-muted-foreground font-mono">{row.opportunity_id}</span>
+                </td>
               </tr>
             ))}
             {paged.length === 0 && (
@@ -180,11 +223,31 @@ export default function ModalEncountersDownload() {
           Showing {paged.length > 0 ? (page - 1) * ENC_PAGE_SIZE + 1 : 0}\u2013{Math.min(page * ENC_PAGE_SIZE, filtered.length)} of {filtered.length}
         </span>
         <div className="flex items-center gap-1">
-          <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1} className="size-7 flex items-center justify-center rounded-[var(--radius-button)] hover:bg-muted transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"><ChevronLeft size={14} /></button>
+          <button
+            onClick={() => setPage(p => Math.max(1, p - 1))}
+            disabled={page === 1}
+            className="size-7 flex items-center justify-center rounded-[var(--radius-button)] hover:bg-muted transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+          >
+            <ChevronLeft size={14} />
+          </button>
           {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
-            <button key={p} onClick={() => setPage(p)} className={`size-7 flex items-center justify-center rounded-[var(--radius-button)] transition-colors cursor-pointer font-[family-name:var(--font-open-sans)] text-[length:var(--text-xs)] ${p === page ? 'bg-foreground text-card font-semibold' : 'text-muted-foreground hover:bg-muted'}`}>{p}</button>
+            <button
+              key={p}
+              onClick={() => setPage(p)}
+              className={`size-7 flex items-center justify-center rounded-[var(--radius-button)] transition-colors cursor-pointer font-[family-name:var(--font-open-sans)] text-[length:var(--text-xs)] ${
+                p === page ? 'bg-foreground text-card font-semibold' : 'text-muted-foreground hover:bg-muted'
+              }`}
+            >
+              {p}
+            </button>
           ))}
-          <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages} className="size-7 flex items-center justify-center rounded-[var(--radius-button)] hover:bg-muted transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"><ChevronRight size={14} /></button>
+          <button
+            onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+            disabled={page === totalPages}
+            className="size-7 flex items-center justify-center rounded-[var(--radius-button)] hover:bg-muted transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+          >
+            <ChevronRight size={14} />
+          </button>
         </div>
       </div>
     </div>
