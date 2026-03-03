@@ -75,8 +75,8 @@
       ]
     },
     "providerPatterns": {
-      "providerSummary": "Uses premium TitanLock anatomic locking plates and PrecisionFix locking screws, averaging ~$2,950 per case for ankle fracture fixation",
-      "peerSummary": "Uses standard SteadyPlate tubular plates and CoreFix cortical screws, averaging ~$775 per case with similar clinical outcomes"
+      "providerSummary": "Uses TitanLock anatomic plates + PrecisionFix locking screws; ~$2,950/case (ankle fx)",
+      "peerSummary": "Uses SteadyPlate tubular plates + CoreFix cortical screws; ~$775/case, similar outcomes"
     }
   },
 
