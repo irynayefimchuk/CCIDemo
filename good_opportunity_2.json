@@ -75,8 +75,8 @@
       ]
     },
     "providerPatterns": {
-      "providerSummary": "Uses BrightLine monofocal ($150) and premium Horizon Aspire Cylindric ($350), averaging ~$210 per case across 70/30 monofocal/cylindric mix",
-      "peerSummary": "Uses Horizon Standard monofocal ($140) with negotiated nominal cylindric pricing ($0.01), averaging ~$115 per case across 82/18 mix"
+      "providerSummary": "Uses BrightLine monofocal ($150) + Horizon Aspire Cylindric ($350); ~$210/case (70/30 mix)",
+      "peerSummary": "Uses Horizon Standard monofocal ($140) + nominal cylindric ($0.01); ~$115/case (82/18 mix)"
     }
   },
 
