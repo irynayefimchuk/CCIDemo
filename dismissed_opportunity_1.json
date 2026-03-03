@@ -70,13 +70,12 @@
     },
     "suppliesKeyDrivers": {
       "drivers": [
-        "Mesh utilization variability (1-4 units)",
-        "Higher per-unit mesh cost"
+        "Mesh utilization variability"
       ]
     },
     "providerPatterns": {
-      "providerSummary": "Spends $237 per case on mesh flat supplies, using 1.31 units per case with high variability (1-4 units)",
-      "peerSummary": "Achieves lower costs at $213 per case by using fewer units (1.17 average) with more consistent utilization (1-2 units max)"
+      "providerSummary": "Uses mesh flat at $237/case; averages 1.31 units with variable use (1–4 units)",
+      "peerSummary": "Uses mesh flat at $213/case; averages 1.17 units with consistent use (1–2 units)"
     }
   },
 
