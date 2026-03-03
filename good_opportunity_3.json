@@ -70,13 +70,13 @@
     },
     "suppliesKeyDrivers": {
       "drivers": [
-        "Premium suture anchors (avg 5.4/case)",
+        "Premium suture anchors",
         "Higher-cost biologics"
       ]
     },
     "providerPatterns": {
-      "providerSummary": "Uses multiple premium anchor types (avg. 5.4 anchors) and higher-cost biologics, averaging ~$3,095 per case",
-      "peerSummary": "Uses fewer anchors (avg. 3.2) and more selective biologics usage, with standardized supply combinations, averaging ~$1,630 per case"
+      "providerSummary": "Uses multiple premium anchor types (5.4 avg) plus higher-cost biologics; ~$3,095 per case",
+      "peerSummary": "Uses fewer anchors (3.2 avg), selective biologics, standardized sets; ~$1,630 per case"
     }
   },
 
