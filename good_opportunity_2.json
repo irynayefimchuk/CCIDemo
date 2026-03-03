@@ -1,0 +1,238 @@
+{
+  "_comment": "Example: Cataract Extraction PHACO IOL — supply cost variation for intraocular lenses",
+
+  "id": "opp-cat-002",
+
+  "meta": {
+    "category": "Supplies",
+    "serviceLine": "Ophthalmology",
+    "departments": ["OR Ambulatory"],
+    "locations": ["North Campus"],
+    "patientTypes": ["Outpatient"],
+    "providers": ["David Patel", "Angela Reeves"]
+  },
+
+  "header": {
+    "procedureTitle": "CATARACT EXTRACTION PHACO IOL",
+    "categoryLabel": "Supply Variation",
+    "categoryColor": "var(--brand-purple)",
+    "setting": "Outpatient",
+    "procedurePopover": {
+      "procedure": "CATARACT EXTRACTION PHACO IOL",
+      "procId": "OPP-66984-OUT-a3f18c42",
+      "setting": "Outpatient",
+      "cpts": ["66984"],
+      "drgs": []
+    },
+    "adjunctServices": [],
+    "statusInfo": null
+  },
+
+  "kpis": {
+    "savingsOpportunity": {
+      "estAnnualImpact": "$27.5K - $37.1K",
+      "midpoint": "$32.3K"
+    },
+    "highCostProvider": {
+      "id": "10195",
+      "name": "David Patel",
+      "specialty": "Ophthalmology",
+      "avgCostPerCase": "$210",
+      "casesPerYear": 340,
+      "savingsPerCase": "+$95",
+      "riskAdjustedProb": "97.8%",
+      "practiceSites": [
+        "Westside Eye Surgery Center",
+        "University Eye Associates",
+        "Metro Vision Clinic"
+      ],
+      "sparklineData": [
+        { "value": 205 }, { "value": 215 }, { "value": 198 }, { "value": 220 },
+        { "value": 210 }, { "value": 218 }, { "value": 203 }, { "value": 212 },
+        { "value": 208 }, { "value": 215 }
+      ]
+    },
+    "lowCostProvider": {
+      "id": "a7c92d01",
+      "name": "Angela Reeves",
+      "specialty": "Ophthalmology",
+      "avgCostPerCase": "$115",
+      "casesPerYear": 52,
+      "practiceSites": [
+        "Eastside Ophthalmology Center",
+        "Community Eye Care"
+      ],
+      "sparklineData": [
+        { "value": 117 }, { "value": 114 }, { "value": 116 }, { "value": 113 },
+        { "value": 115 }, { "value": 116 }, { "value": 114 }, { "value": 115 },
+        { "value": 117 }, { "value": 114 }, { "value": 114 }
+      ]
+    },
+    "suppliesKeyDrivers": {
+      "drivers": [
+        "Premium IOL pricing",
+        "Cylindric lens vendor markup"
+      ]
+    },
+    "providerPatterns": {
+      "providerSummary": "Uses BrightLine monofocal ($150) and premium Horizon Aspire Cylindric ($350), averaging ~$210 per case across 70/30 monofocal/cylindric mix",
+      "peerSummary": "Uses Horizon Standard monofocal ($140) with negotiated nominal cylindric pricing ($0.01), averaging ~$115 per case across 82/18 mix"
+    }
+  },
+
+  "sections": [
+    {
+      "id": "cohort",
+      "title": "Procedure & Volume",
+      "iconName": "Users",
+      "insight": "Phaco IOL, OP, adults 18+",
+      "defaultOpen": false,
+      "headerHighlight": null,
+      "providerColumns": {
+        "highProvider": { "id": "10195", "name": "David Patel", "specialty": "Ophthalmology" },
+        "lowProvider":  { "id": "a7c92d01", "name": "Angela Reeves", "specialty": "Ophthalmology" }
+      },
+      "rows": [
+        { "type": "standard", "metric": "Proc ID",              "valA": "OPP-66984-OUT-a3f18c42", "valB": "Same" },
+        { "type": "standard", "metric": "CPT Codes",            "valA": "66984", "valB": "Same" },
+        { "type": "standard", "metric": "Case volume (12 mo)",  "valA": "340 cases", "valB": "52 cases" }
+      ]
+    },
+    {
+      "id": "drivers",
+      "title": "Supplies - Cost Drivers",
+      "iconName": "SuppliesIconVector",
+      "insight": "Premium IOL pricing & cylindric lens markup",
+      "defaultOpen": true,
+      "headerHighlight": {
+        "label": "Savings/Case",
+        "value": "+$95/case",
+        "prob": "97.8% prob"
+      },
+      "providerColumns": {
+        "highProvider": { "id": "10195", "name": "David Patel", "specialty": "Ophthalmology" },
+        "lowProvider":  { "id": "a7c92d01", "name": "Angela Reeves", "specialty": "Ophthalmology" }
+      },
+      "rows": [
+      {
+        "type": "category-header",
+        "metric": "Most Common Supply Combination"
+      },
+      {
+        "type": "combo-summary",
+        "metric": "Top Combination",
+        "nameA": "BrightLine BL100 + Horizon Aspire Cylindric",
+        "costA": "$210",
+        "useA": "30% premium cylindric mix",
+        "nameB": "Horizon Standard + Negotiated Cylindric ($0.01)",
+        "costB": "$115",
+        "useB": "18% cylindric at nominal pricing",
+        "savings": "+$95 savings"
+      },
+      {
+        "type": "category-header",
+        "metric": "Intraocular Lenses",
+        "badges": ["Price-Driven"],
+        "categorySavings": "+$81-$109/case"
+      },
+      {
+        "type": "supply-item",
+        "metric": "Monofocal IOL",
+        "idA": "SUP-80101", "nameA": "BrightLine BL100 Monofocal", "costA": "$150", "useA": "0.70", "maxUseA": "0.70",
+        "idB": "SUP-80201", "nameB": "Horizon Standard Monofocal", "costB": "$140", "useB": "0.82", "maxUseB": "0.82",
+        "status": "Price-driven", "statusType": "price"
+      },
+      {
+        "type": "supply-item",
+        "metric": "Cylindric IOL",
+        "idA": "SUP-80102", "nameA": "Horizon Aspire Cylindric", "costA": "$350", "useA": "0.30", "maxUseA": "0.30",
+        "idB": "SUP-80202", "nameB": "Horizon Standard Cylindric", "costB": "$0.01", "useB": "0.18", "maxUseB": "0.18",
+        "status": "Price-driven", "statusType": "price"
+      },
+      {
+        "type": "utilization",
+        "metric": "Utilization",
+        "valA": "1.0 IOL/case; 30% premium cylindric",
+        "valB": "1.0 IOL/case; 18% cylindric at negotiated pricing"
+      },
+      {
+        "_comment": "Legacy row kept for header-highlight compatibility",
+        "type": "standard",
+        "metric": "Avg supply cost / case",
+        "valA": "$210", "valB": "$115",
+        "highlightA": true
+      }
+    ]
+    },
+    {
+      "id": "quality",
+      "title": "Quality & Risk",
+      "iconName": "AlertCircle",
+      "insight": "Age/Comorbidities/Visual outcomes",
+      "defaultOpen": false,
+      "headerHighlight": null,
+      "rows": [
+        {
+          "type": "standard",
+          "metric": "Risk adjustment",
+          "valA": "Age, comorbidity index, lens complexity",
+          "valB": "Same"
+        }
+      ]
+    }
+  ],
+
+  "chartData": {
+    "trendData": [
+      { "name": "Jan '25", "highCostVal": 215, "lowCostVal": 117, "highCostMean": 210, "lowCostMean": 115, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Feb '25", "highCostVal": 205, "lowCostVal": 114, "highCostMean": 210, "lowCostMean": 115, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Mar '25", "highCostVal": 220, "lowCostVal": 116, "highCostMean": 210, "lowCostMean": 115, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Apr '25", "highCostVal": 198, "lowCostVal": 113, "highCostMean": 210, "lowCostMean": 115, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "May '25", "highCostVal": 212, "lowCostVal": 115, "highCostMean": 210, "lowCostMean": 115, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Jun '25", "highCostVal": 203, "lowCostVal": 116, "highCostMean": 210, "lowCostMean": 115, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Jul '25", "highCostVal": 218, "lowCostVal": 114, "highCostMean": 210, "lowCostMean": 115, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Aug '25", "highCostVal": 210, "lowCostVal": 115, "highCostMean": 210, "lowCostMean": 115, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Sep '25", "highCostVal": 207, "lowCostVal": 117, "highCostMean": 210, "lowCostMean": 115, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Oct '25", "highCostVal": 215, "lowCostVal": 114, "highCostMean": 210, "lowCostMean": 115, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Nov '25", "highCostVal": 204, "lowCostVal": 115, "highCostMean": 210, "lowCostMean": 115, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Dec '25", "highCostVal": 210, "lowCostVal": 114, "highCostMean": 210, "lowCostMean": 115, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": true,  "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false }
+    ],
+    "spcConfig": {
+      "highCost": { "mean": 210, "sigma": 15 },
+      "lowCost":  { "mean": 115, "sigma": 5 },
+      "forecastMonths": 6
+    }
+  },
+  "nextSteps": [
+    {
+      "title": "Standard IOL Vendor Alignment",
+      "subtitle": "Switch monofocal IOLs from BrightLine to Horizon",
+      "type": "Price-driven",
+      "current": "Patel uses BrightLine BL100 monofocal IOL at $150/unit",
+      "target": "Standardize to Horizon Standard monofocal ($140/unit)",
+      "savings": "$2,380 annually",
+      "savingsDetail": "$7 per case × 340 annual cases",
+      "complexity": "Low",
+      "complexityDetail": "direct product substitution, same clinical outcomes"
+    },
+    {
+      "title": "Cylindric Lens Contract Renegotiation",
+      "subtitle": "Negotiate nominal pricing for specialty cylindric IOLs",
+      "type": "Price-driven",
+      "current": "Patel pays $350 for Horizon Aspire Cylindric IOLs in 30% of cases",
+      "target": "Negotiate $0.01 cylindric pricing like peers (Horizon Standard Cylindric)",
+      "savings": "$29,920 annually",
+      "savingsDetail": "$88 per case × 340 annual cases",
+      "complexity": "Medium",
+      "complexityDetail": "requires vendor contract renegotiation"
+    }
+  ],
+  "supplyCatalog": [
+    { "supply_id": "SUP-80101", "supply_name": "BrightLine BL100 Monofocal IOL", "category": "Intraocular Lenses", "manufacturer": "BrightLine Optics", "unit_cost": 150.00, "units_per_case_high": 0.70, "units_per_case_low": 0, "provider_high": "10195", "provider_low": "\u2014", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "high" },
+    { "supply_id": "SUP-80102", "supply_name": "Horizon Aspire Cylindric IOL", "category": "Intraocular Lenses", "manufacturer": "Horizon Lens Co", "unit_cost": 350.00, "units_per_case_high": 0.30, "units_per_case_low": 0, "provider_high": "10195", "provider_low": "\u2014", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "high" },
+    { "supply_id": "SUP-80201", "supply_name": "Horizon Standard Monofocal IOL", "category": "Intraocular Lenses", "manufacturer": "Horizon Lens Co", "unit_cost": 140.00, "units_per_case_high": 0, "units_per_case_low": 0.82, "provider_high": "\u2014", "provider_low": "a7c92d01", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "low" },
+    { "supply_id": "SUP-80202", "supply_name": "Horizon Standard Cylindric IOL", "category": "Intraocular Lenses", "manufacturer": "Horizon Lens Co", "unit_cost": 0.01, "units_per_case_high": 0, "units_per_case_low": 0.18, "provider_high": "\u2014", "provider_low": "a7c92d01", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "low" }
+  ],
+
+  "activeSPCPanel": null
+}

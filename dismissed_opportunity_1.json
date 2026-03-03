@@ -1,0 +1,217 @@
+{
+  "_comment": "Example: Hernia Repair Inguinal Lap Robotic Assist — dismissed due to minimal savings ($24/case)",
+
+  "id": "opp-hernia-dismissed-001",
+
+  "meta": {
+    "category": "Supplies",
+    "serviceLine": "General Surgery",
+    "departments": ["OR Main"],
+    "locations": ["North Campus"],
+    "patientTypes": ["Outpatient"],
+    "providers": ["Michael Torres", "Linda Park"]
+  },
+
+  "header": {
+    "procedureTitle": "HERNIA REPAIR INGUINAL LAPAROSCOPIC ROBOTIC ASSIST",
+    "categoryLabel": "Supply Variation",
+    "categoryColor": "var(--brand-purple)",
+    "setting": "Outpatient",
+    "procedurePopover": {
+      "procedure": "HERNIA REPAIR INGUINAL LAPAROSCOPIC ROBOTIC ASSIST",
+      "procId": "OPP-4965000000-OUT-c8d2e431",
+      "setting": "Outpatient",
+      "cpts": ["49650"],
+      "drgs": []
+    },
+    "adjunctServices": [],
+    "statusInfo": null
+  },
+
+  "kpis": {
+    "savingsOpportunity": {
+      "estAnnualImpact": "$221 - $2,532",
+      "midpoint": "$1.4K"
+    },
+    "highCostProvider": {
+      "id": "a3d71f42",
+      "name": "Michael Torres",
+      "specialty": "General Surgery",
+      "avgCostPerCase": "$237",
+      "casesPerYear": 52,
+      "savingsPerCase": "+$24",
+      "riskAdjustedProb": "86.0%",
+      "practiceSites": [
+        "St. Mary's Medical Center",
+        "Valley General Hospital",
+        "Riverside Surgical Center"
+      ],
+      "sparklineData": [
+        { "value": 245 }, { "value": 230 }, { "value": 245 }, { "value": 220 },
+        { "value": 240 }, { "value": 240 }, { "value": 235 }, { "value": 245 },
+        { "value": 225 }, { "value": 245 }
+      ]
+    },
+    "lowCostProvider": {
+      "id": "f2e8c916",
+      "name": "Linda Park",
+      "specialty": "General Surgery",
+      "avgCostPerCase": "$213",
+      "casesPerYear": 24,
+      "practiceSites": [
+        "Harbor View Medical Center",
+        "Pacific Surgical Group"
+      ],
+      "sparklineData": [
+        { "value": 212 }, { "value": 215 }, { "value": 210 }, { "value": 214 },
+        { "value": 213 }, { "value": 211 }, { "value": 215 }, { "value": 213 },
+        { "value": 212 }, { "value": 214 }
+      ]
+    },
+    "suppliesKeyDrivers": {
+      "drivers": [
+        "Mesh utilization variability (1-4 units)",
+        "Higher per-unit mesh cost"
+      ]
+    },
+    "providerPatterns": {
+      "providerSummary": "Spends $237 per case on mesh flat supplies, using 1.31 units per case with high variability (1-4 units)",
+      "peerSummary": "Achieves lower costs at $213 per case by using fewer units (1.17 average) with more consistent utilization (1-2 units max)"
+    }
+  },
+
+  "sections": [
+    {
+      "id": "cohort",
+      "title": "Procedure & Volume",
+      "iconName": "Users",
+      "insight": "Inguinal hernia repair, lap/robotic, OP, adults 18+",
+      "defaultOpen": false,
+      "headerHighlight": null,
+      "providerColumns": {
+        "highProvider": { "id": "a3d71f42", "name": "Michael Torres", "specialty": "General Surgery" },
+        "lowProvider":  { "id": "f2e8c916", "name": "Linda Park", "specialty": "General Surgery" }
+      },
+      "rows": [
+        { "type": "standard", "metric": "Proc ID",              "valA": "OPP-4965000000-OUT-c8d2e431", "valB": "Same" },
+        { "type": "standard", "metric": "CPT Codes",            "valA": "49650", "valB": "Same" },
+        { "type": "standard", "metric": "Case volume (12 mo)",  "valA": "52 cases", "valB": "24 cases" }
+      ]
+    },
+    {
+      "id": "drivers",
+      "title": "Supplies - Cost Drivers",
+      "iconName": "SuppliesIconVector",
+      "insight": "Mesh utilization variability",
+      "defaultOpen": true,
+      "headerHighlight": {
+        "label": "Savings/Case",
+        "value": "+$24/case",
+        "prob": "86.0% prob"
+      },
+      "providerColumns": {
+        "highProvider": { "id": "a3d71f42", "name": "Michael Torres", "specialty": "General Surgery" },
+        "lowProvider":  { "id": "f2e8c916", "name": "Linda Park", "specialty": "General Surgery" }
+      },
+      "rows": [
+      {
+        "type": "category-header",
+        "metric": "Most Common Supply Combination"
+      },
+      {
+        "type": "combo-summary",
+        "metric": "Top Combination",
+        "nameA": "SecureGrip Flat Mesh (1.31 units)",
+        "costA": "$237",
+        "useA": "High variability (1-4 units)",
+        "nameB": "SecureGrip Flat Mesh (1.17 units)",
+        "costB": "$213",
+        "useB": "Consistent (1-2 units)",
+        "savings": "+$24 savings"
+      },
+      {
+        "type": "category-header",
+        "metric": "Surgical Mesh",
+        "badges": ["Use-Driven"],
+        "categorySavings": "+$4-$49/case"
+      },
+      {
+        "type": "supply-item",
+        "metric": "Primary",
+        "idA": "SUP-33010", "nameA": "SecureGrip Flat Mesh 15x10cm", "costA": "$182", "useA": "1.31", "maxUseA": "4.0",
+        "idB": "SUP-33010", "nameB": "SecureGrip Flat Mesh 15x10cm", "costB": "$182", "useB": "1.17", "maxUseB": "2.0",
+        "status": "Use-driven", "statusType": "use"
+      },
+      {
+        "type": "utilization",
+        "metric": "Utilization",
+        "valA": "Avg 1.31 units/case; high variability (1-4 units)",
+        "valB": "Avg 1.17 units/case; consistent (1-2 units max)"
+      },
+      {
+        "_comment": "Legacy row kept for header-highlight compatibility",
+        "type": "standard",
+        "metric": "Avg supply cost / case",
+        "valA": "$237", "valB": "$213",
+        "highlightA": true
+      }
+    ]
+    },
+    {
+      "id": "quality",
+      "title": "Quality & Risk",
+      "iconName": "AlertCircle",
+      "insight": "Age/Comorbidities/Vizient",
+      "defaultOpen": false,
+      "headerHighlight": null,
+      "rows": [
+        {
+          "type": "standard",
+          "metric": "Risk adjustment",
+          "valA": "Vizient Comorbidities",
+          "valB": "Same"
+        }
+      ]
+    }
+  ],
+
+  "chartData": {
+    "trendData": [
+      { "name": "Jan '25", "highCostVal": 240, "lowCostVal": 212, "highCostMean": 237, "lowCostMean": 213, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Feb '25", "highCostVal": 225, "lowCostVal": 215, "highCostMean": 237, "lowCostMean": 213, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Mar '25", "highCostVal": 260, "lowCostVal": 210, "highCostMean": 237, "lowCostMean": 213, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Apr '25", "highCostVal": 232, "lowCostVal": 214, "highCostMean": 237, "lowCostMean": 213, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "May '25", "highCostVal": 310, "lowCostVal": 211, "highCostMean": 237, "lowCostMean": 213, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Jun '25", "highCostVal": 245, "lowCostVal": 213, "highCostMean": 237, "lowCostMean": 213, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Jul '25", "highCostVal": 220, "lowCostVal": 215, "highCostMean": 237, "lowCostMean": 213, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Aug '25", "highCostVal": 250, "lowCostVal": 212, "highCostMean": 237, "lowCostMean": 213, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Sep '25", "highCostVal": 235, "lowCostVal": 214, "highCostMean": 237, "lowCostMean": 213, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Oct '25", "highCostVal": 228, "lowCostVal": 211, "highCostMean": 237, "lowCostMean": 213, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Nov '25", "highCostVal": 242, "lowCostVal": 213, "highCostMean": 237, "lowCostMean": 213, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Dec '25", "highCostVal": 238, "lowCostVal": 212, "highCostMean": 237, "lowCostMean": 213, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false }
+    ],
+    "spcConfig": {
+      "highCost": { "mean": 237, "sigma": 35 },
+      "lowCost":  { "mean": 213, "sigma": 10 },
+      "forecastMonths": 6
+    }
+  },
+  "nextSteps": [
+    {
+      "title": "Mesh Utilization Standardization",
+      "subtitle": "Reduce mesh unit variability to peer-consistent levels",
+      "type": "Use-driven",
+      "current": "Torres uses 1.31 units/case with variability of 1-4 units",
+      "target": "Align with Park's consistent 1.17 units/case (1-2 unit range)",
+      "savings": "$1,248 annually",
+      "savingsDetail": "$24 per case x 52 annual cases",
+      "complexity": "Low",
+      "complexityDetail": "utilization awareness and standardization"
+    }
+  ],
+  "supplyCatalog": [
+    { "supply_id": "SUP-33010", "supply_name": "SecureGrip Flat Mesh 15x10cm", "category": "Surgical Mesh", "manufacturer": "Vantage Surgical", "unit_cost": 182.00, "units_per_case_high": 1.31, "units_per_case_low": 1.17, "provider_high": "a3d71f42", "provider_low": "f2e8c916", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "use" }
+  ],
+
+  "activeSPCPanel": null
+}

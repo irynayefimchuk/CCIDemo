@@ -1,0 +1,250 @@
+{
+  "_comment": "Example: ORIF Ankle — supply cost variation for fracture fixation hardware",
+
+  "id": "opp-ankle-004",
+
+  "meta": {
+    "category": "Supplies",
+    "serviceLine": "Orthopedics",
+    "departments": ["OR Main"],
+    "locations": ["South Campus"],
+    "patientTypes": ["Outpatient"],
+    "providers": ["James Crawford", "Angela Martinez"]
+  },
+
+  "header": {
+    "procedureTitle": "ORIF ANKLE",
+    "categoryLabel": "Supply Variation",
+    "categoryColor": "var(--brand-purple)",
+    "setting": "Outpatient",
+    "procedurePopover": {
+      "procedure": "ORIF ANKLE",
+      "procId": "OPP-27792-OUT-d4e7a912",
+      "setting": "Outpatient",
+      "cpts": ["27792"],
+      "drgs": []
+    },
+    "adjunctServices": [],
+    "statusInfo": null
+  },
+
+  "kpis": {
+    "savingsOpportunity": {
+      "estAnnualImpact": "$78K - $96K",
+      "midpoint": "$87K"
+    },
+    "highCostProvider": {
+      "id": "2653",
+      "name": "James Crawford",
+      "specialty": "Orthopedic Surgery",
+      "avgCostPerCase": "$2,950",
+      "casesPerYear": 40,
+      "savingsPerCase": "+$2,175",
+      "riskAdjustedProb": "96.2%",
+      "practiceSites": [
+        "Lakewood Orthopedic Center",
+        "Summit Medical Group",
+        "Westridge Surgical Center"
+      ],
+      "sparklineData": [
+        { "value": 2900 }, { "value": 2980 }, { "value": 2920 }, { "value": 3000 },
+        { "value": 2950 }, { "value": 2970 }, { "value": 2910 }, { "value": 2990 },
+        { "value": 2940 }, { "value": 2940 }
+      ]
+    },
+    "lowCostProvider": {
+      "id": "b3d41e08",
+      "name": "Angela Martinez",
+      "specialty": "Orthopedic Surgery",
+      "avgCostPerCase": "$775",
+      "casesPerYear": 55,
+      "practiceSites": [
+        "Central Valley Medical Center",
+        "Greenfield Orthopedics"
+      ],
+      "sparklineData": [
+        { "value": 770 }, { "value": 780 }, { "value": 775 }, { "value": 770 },
+        { "value": 780 }, { "value": 775 }, { "value": 770 }, { "value": 780 },
+        { "value": 775 }, { "value": 770 }, { "value": 780 }
+      ]
+    },
+    "suppliesKeyDrivers": {
+      "drivers": [
+        "Premium locking plate pricing",
+        "Specialized locking screw markup"
+      ]
+    },
+    "providerPatterns": {
+      "providerSummary": "Uses premium TitanLock anatomic locking plates and PrecisionFix locking screws, averaging ~$2,950 per case for ankle fracture fixation",
+      "peerSummary": "Uses standard SteadyPlate tubular plates and CoreFix cortical screws, averaging ~$775 per case with similar clinical outcomes"
+    }
+  },
+
+  "sections": [
+    {
+      "id": "cohort",
+      "title": "Procedure & Volume",
+      "iconName": "Users",
+      "insight": "ORIF Ankle, OP, adults 18+",
+      "defaultOpen": false,
+      "headerHighlight": null,
+      "providerColumns": {
+        "highProvider": { "id": "2653", "name": "James Crawford", "specialty": "Orthopedic Surgery" },
+        "lowProvider":  { "id": "b3d41e08", "name": "Angela Martinez", "specialty": "Orthopedic Surgery" }
+      },
+      "rows": [
+        { "type": "standard", "metric": "Proc ID",              "valA": "OPP-27792-OUT-d4e7a912", "valB": "Same" },
+        { "type": "standard", "metric": "CPT Codes",            "valA": "27792", "valB": "Same" },
+        { "type": "standard", "metric": "Case volume (12 mo)",  "valA": "40 cases", "valB": "55 cases" }
+      ]
+    },
+    {
+      "id": "drivers",
+      "title": "Supplies - Cost Drivers",
+      "iconName": "SuppliesIconVector",
+      "insight": "Premium locking hardware vs standard fixation",
+      "defaultOpen": true,
+      "headerHighlight": {
+        "label": "Savings/Case",
+        "value": "+$2,175/case",
+        "prob": "96.2% prob"
+      },
+      "providerColumns": {
+        "highProvider": { "id": "2653", "name": "James Crawford", "specialty": "Orthopedic Surgery" },
+        "lowProvider":  { "id": "b3d41e08", "name": "Angela Martinez", "specialty": "Orthopedic Surgery" }
+      },
+      "rows": [
+      {
+        "type": "category-header",
+        "metric": "Most Common Supply Combination"
+      },
+      {
+        "type": "combo-summary",
+        "metric": "Top Combination",
+        "nameA": "TitanLock Anatomic Plate + PrecisionFix Locking Screws",
+        "costA": "$2,950",
+        "useA": "Premium locking fixation system",
+        "nameB": "SteadyPlate Tubular Plate + CoreFix Standard Screws",
+        "costB": "$775",
+        "useB": "Standard fixation hardware",
+        "savings": "+$2,175 savings"
+      },
+      {
+        "type": "category-header",
+        "metric": "Fracture Plates",
+        "badges": ["Price-Driven"],
+        "categorySavings": "+$1,020-$1,150/case"
+      },
+      {
+        "type": "supply-item",
+        "metric": "Locking vs Standard Plate",
+        "idA": "SUP-60101", "nameA": "TitanLock Anatomic Locking Plate", "costA": "$1,150", "useA": "1.0", "maxUseA": "1.0",
+        "idB": "SUP-60201", "nameB": "SteadyPlate One-Third Tubular Plate", "costB": "$63", "useB": "1.0", "maxUseB": "1.0",
+        "status": "Price-driven", "statusType": "price"
+      },
+      {
+        "type": "utilization",
+        "metric": "Utilization",
+        "valA": "1.0 plate/case; premium anatomic locking",
+        "valB": "1.0 plate/case; standard one-third tubular"
+      },
+      {
+        "type": "category-header",
+        "metric": "Screws & Fixation",
+        "badges": ["Price-Driven"],
+        "categorySavings": "+$1,000-$1,180/case"
+      },
+      {
+        "type": "supply-item",
+        "metric": "Locking vs Standard Screws",
+        "idA": "SUP-60102", "nameA": "PrecisionFix Locking Screws 3.5mm", "costA": "$225", "useA": "8.0", "maxUseA": "12.0",
+        "idB": "SUP-60202", "nameB": "CoreFix Standard Cortical Screws 3.5mm", "costB": "$89", "useB": "8.0", "maxUseB": "10.0",
+        "status": "Price-driven", "statusType": "price"
+      },
+      {
+        "type": "utilization",
+        "metric": "Utilization",
+        "valA": "8.0 screws/case; locking fixation",
+        "valB": "8.0 screws/case; standard cortical"
+      },
+      {
+        "_comment": "Legacy row kept for header-highlight compatibility",
+        "type": "standard",
+        "metric": "Avg supply cost / case",
+        "valA": "$2,950", "valB": "$775",
+        "highlightA": true
+      }
+    ]
+    },
+    {
+      "id": "quality",
+      "title": "Quality & Risk",
+      "iconName": "AlertCircle",
+      "insight": "Age/Comorbidities/Fracture complexity",
+      "defaultOpen": false,
+      "headerHighlight": null,
+      "rows": [
+        {
+          "type": "standard",
+          "metric": "Risk adjustment",
+          "valA": "Age, comorbidity index, fracture classification",
+          "valB": "Same"
+        }
+      ]
+    }
+  ],
+
+  "chartData": {
+    "trendData": [
+      { "name": "Jan '25", "highCostVal": 2920, "lowCostVal": 780, "highCostMean": 2950, "lowCostMean": 775, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Feb '25", "highCostVal": 3050, "lowCostVal": 770, "highCostMean": 2950, "lowCostMean": 775, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Mar '25", "highCostVal": 2870, "lowCostVal": 790, "highCostMean": 2950, "lowCostMean": 775, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Apr '25", "highCostVal": 2980, "lowCostVal": 760, "highCostMean": 2950, "lowCostMean": 775, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "May '25", "highCostVal": 3100, "lowCostVal": 775, "highCostMean": 2950, "lowCostMean": 775, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Jun '25", "highCostVal": 2850, "lowCostVal": 785, "highCostMean": 2950, "lowCostMean": 775, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Jul '25", "highCostVal": 2950, "lowCostVal": 765, "highCostMean": 2950, "lowCostMean": 775, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Aug '25", "highCostVal": 3020, "lowCostVal": 780, "highCostMean": 2950, "lowCostMean": 775, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Sep '25", "highCostVal": 2900, "lowCostVal": 770, "highCostMean": 2950, "lowCostMean": 775, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Oct '25", "highCostVal": 3580, "lowCostVal": 785, "highCostMean": 2950, "lowCostMean": 775, "highLimitViolation": true,  "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Nov '25", "highCostVal": 2910, "lowCostVal": 775, "highCostMean": 2950, "lowCostMean": 775, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Dec '25", "highCostVal": 2940, "lowCostVal": 765, "highCostMean": 2950, "lowCostMean": 775, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": true,  "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false }
+    ],
+    "spcConfig": {
+      "highCost": { "mean": 2950, "sigma": 200 },
+      "lowCost":  { "mean": 775, "sigma": 40 },
+      "forecastMonths": 6
+    }
+  },
+  "nextSteps": [
+    {
+      "title": "Fracture Plate Standardization",
+      "subtitle": "Switch from premium locking to standard tubular plates",
+      "type": "Price-driven",
+      "current": "Crawford uses TitanLock anatomic locking plates at $1,150/unit",
+      "target": "Standardize to SteadyPlate one-third tubular plates ($63/unit)",
+      "savings": "$43,480 annually",
+      "savingsDetail": "$1,087 per case × 40 annual cases",
+      "complexity": "Medium",
+      "complexityDetail": "surgeon preference, clinical evaluation needed"
+    },
+    {
+      "title": "Screw Vendor Alignment",
+      "subtitle": "Transition from locking to standard cortical screws",
+      "type": "Price-driven",
+      "current": "Crawford uses PrecisionFix locking screws at $225/unit (8.0/case)",
+      "target": "Adopt Martinez's CoreFix standard cortical screws ($89/unit)",
+      "savings": "$43,520 annually",
+      "savingsDetail": "$1,088 per case × 40 annual cases",
+      "complexity": "Low",
+      "complexityDetail": "direct product substitution for most fracture patterns"
+    }
+  ],
+  "supplyCatalog": [
+    { "supply_id": "SUP-60101", "supply_name": "TitanLock Anatomic Locking Plate", "category": "Fracture Plates", "manufacturer": "TitanLock Surgical", "unit_cost": 1150.00, "units_per_case_high": 1.0, "units_per_case_low": 0, "provider_high": "2653", "provider_low": "\u2014", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "high" },
+    { "supply_id": "SUP-60102", "supply_name": "PrecisionFix Locking Screws 3.5mm", "category": "Screws & Fixation", "manufacturer": "PrecisionFix Medical", "unit_cost": 225.00, "units_per_case_high": 8.0, "units_per_case_low": 0, "provider_high": "2653", "provider_low": "\u2014", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "high" },
+    { "supply_id": "SUP-60201", "supply_name": "SteadyPlate One-Third Tubular Plate", "category": "Fracture Plates", "manufacturer": "SteadyPlate Orthopedics", "unit_cost": 63.00, "units_per_case_high": 0, "units_per_case_low": 1.0, "provider_high": "\u2014", "provider_low": "b3d41e08", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "low" },
+    { "supply_id": "SUP-60202", "supply_name": "CoreFix Standard Cortical Screws 3.5mm", "category": "Screws & Fixation", "manufacturer": "CoreFix Instruments", "unit_cost": 89.00, "units_per_case_high": 0, "units_per_case_low": 8.0, "provider_high": "\u2014", "provider_low": "b3d41e08", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "low" }
+  ],
+
+  "activeSPCPanel": null
+}

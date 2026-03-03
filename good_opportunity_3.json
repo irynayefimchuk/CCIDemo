@@ -1,0 +1,252 @@
+{
+  "_comment": "Example: Arthroscopy Shoulder — CPT 29806, supply variation",
+
+  "id": "opp-shoulder-001",
+
+  "meta": {
+    "category": "Supplies",
+    "serviceLine": "Orthopedics",
+    "departments": ["OR Main"],
+    "locations": ["North Campus"],
+    "patientTypes": ["Outpatient"],
+    "providers": ["James Hartley", "Karen Nguyen"]
+  },
+
+  "header": {
+    "procedureTitle": "ARTHROSCOPY SHOULDER",
+    "categoryLabel": "Supply Variation",
+    "categoryColor": "var(--brand-purple)",
+    "setting": "Outpatient",
+    "procedurePopover": {
+      "procedure": "ARTHROSCOPY SHOULDER",
+      "procId": "OPP-2980600000-OUT-a3f1c892",
+      "setting": "Outpatient",
+      "cpts": ["29806"],
+      "drgs": []
+    },
+    "adjunctServices": [],
+    "statusInfo": null
+  },
+
+  "kpis": {
+    "savingsOpportunity": {
+      "estAnnualImpact": "$60K - $130K",
+      "midpoint": "$95K"
+    },
+    "highCostProvider": {
+      "id": "b4c1a827",
+      "name": "James Hartley",
+      "specialty": "Orthopedic Surgery",
+      "avgCostPerCase": "$3,095",
+      "casesPerYear": 65,
+      "savingsPerCase": "+$1,465",
+      "riskAdjustedProb": "95.0%",
+      "practiceSites": [
+        "St. Mary's Medical Center",
+        "Northwest Orthopedic Institute",
+        "Valley General Hospital"
+      ],
+      "sparklineData": [
+        { "value": 3050 }, { "value": 3150 }, { "value": 2980 }, { "value": 3200 },
+        { "value": 3100 }, { "value": 3120 }, { "value": 3050 }, { "value": 3120 },
+        { "value": 3100 }, { "value": 3080 }
+      ]
+    },
+    "lowCostProvider": {
+      "id": "d7f29e13",
+      "name": "Karen Nguyen",
+      "specialty": "Orthopedic Surgery",
+      "avgCostPerCase": "$1,630",
+      "casesPerYear": 13,
+      "practiceSites": [
+        "Harbor View Medical Center",
+        "Pacific Orthopedic Group"
+      ],
+      "sparklineData": [
+        { "value": 1620 }, { "value": 1640 }, { "value": 1610 }, { "value": 1650 },
+        { "value": 1630 }, { "value": 1620 }, { "value": 1640 }, { "value": 1630 },
+        { "value": 1620 }, { "value": 1635 }
+      ]
+    },
+    "suppliesKeyDrivers": {
+      "drivers": [
+        "Premium suture anchors (avg 5.4/case)",
+        "Higher-cost biologics"
+      ]
+    },
+    "providerPatterns": {
+      "providerSummary": "Uses multiple premium anchor types (avg. 5.4 anchors) and higher-cost biologics, averaging ~$3,095 per case",
+      "peerSummary": "Uses fewer anchors (avg. 3.2) and more selective biologics usage, with standardized supply combinations, averaging ~$1,630 per case"
+    }
+  },
+
+  "sections": [
+    {
+      "id": "cohort",
+      "title": "Procedure & Volume",
+      "iconName": "Users",
+      "insight": "Shoulder arthroscopy, OP, adults 18+",
+      "defaultOpen": false,
+      "headerHighlight": null,
+      "providerColumns": {
+        "highProvider": { "id": "b4c1a827", "name": "James Hartley", "specialty": "Orthopedic Surgery" },
+        "lowProvider":  { "id": "d7f29e13", "name": "Karen Nguyen", "specialty": "Orthopedic Surgery" }
+      },
+      "rows": [
+        { "type": "standard", "metric": "Proc ID",              "valA": "OPP-2980600000-OUT-a3f1c892", "valB": "Same" },
+        { "type": "standard", "metric": "CPT Codes",            "valA": "29806", "valB": "Same" },
+        { "type": "standard", "metric": "Case volume (12 mo)",  "valA": "65 cases", "valB": "13 cases" }
+      ]
+    },
+    {
+      "id": "drivers",
+      "title": "Supplies - Cost Drivers",
+      "iconName": "SuppliesIconVector",
+      "insight": "Premium anchors & biologics",
+      "defaultOpen": true,
+      "headerHighlight": {
+        "label": "Savings/Case",
+        "value": "+$1,465/case",
+        "prob": "95.0% prob"
+      },
+      "providerColumns": {
+        "highProvider": { "id": "b4c1a827", "name": "James Hartley", "specialty": "Orthopedic Surgery" },
+        "lowProvider":  { "id": "d7f29e13", "name": "Karen Nguyen", "specialty": "Orthopedic Surgery" }
+      },
+      "rows": [
+      {
+        "type": "category-header",
+        "metric": "Most Common Supply Combination"
+      },
+      {
+        "type": "combo-summary",
+        "metric": "Top Combination",
+        "nameA": "PivotLock/FiberGrip Anchors (5.4) + DermaBridge Patch",
+        "costA": "$3,095",
+        "useA": "High utilization (avg. 5.4 anchors)",
+        "nameB": "HEALIX/DUOFIX Anchors (3.2) + Selective PRP",
+        "costB": "$1,630",
+        "useB": "Standardized (avg. 3.2 anchors)",
+        "savings": "+$1,465 savings"
+      },
+      {
+        "type": "category-header",
+        "metric": "Suture Anchors",
+        "badges": ["Price-Driven", "Use-Driven"],
+        "categorySavings": "+$900-$1,100/case"
+      },
+      {
+        "type": "supply-item",
+        "metric": "Primary",
+        "idA": "SUP-82010", "nameA": "Apex PivotLock", "costA": "$385", "useA": "3.2", "maxUseA": "6.0",
+        "idB": "SUP-82050", "nameB": "Meridian HEALIX BIOSORB", "costB": "$265", "useB": "2.1", "maxUseB": "4.0",
+        "status": "Both", "statusType": "both"
+      },
+      {
+        "type": "supply-item",
+        "metric": "Secondary",
+        "idA": "SUP-82015", "nameA": "Apex FiberGrip", "costA": "$420", "useA": "2.2", "maxUseA": "5.0",
+        "idB": "SUP-82055", "nameB": "Meridian DUOFIX Pro", "costB": "$245", "useB": "1.1", "maxUseB": "2.5"
+      },
+      {
+        "type": "utilization",
+        "metric": "Utilization",
+        "valA": "Avg 5.4 anchors/case; high variability",
+        "valB": "Avg 3.2 anchors/case; low variability"
+      },
+      {
+        "type": "category-header",
+        "metric": "Biologics",
+        "badges": ["Price-Driven"],
+        "categorySavings": "+$400-$600/case"
+      },
+      {
+        "type": "supply-item",
+        "metric": "Dermal Patch vs PRP",
+        "idA": "SUP-90100", "nameA": "Apex DermaBridge", "costA": "$850 - $1,200", "useA": "0.85", "maxUseA": "1",
+        "idB": "SUP-90200", "nameB": "Apex PRP Dual Syringe", "costB": "$285 - $350", "useB": "0.6", "maxUseB": "1",
+        "status": "Price-driven"
+      },
+      {
+        "_comment": "Legacy row kept for header-highlight compatibility",
+        "type": "standard",
+        "metric": "Avg supply cost / case",
+        "valA": "$3,095", "valB": "$1,630",
+        "highlightA": true
+      }
+    ]
+    },
+    {
+      "id": "quality",
+      "title": "Quality & Risk",
+      "iconName": "AlertCircle",
+      "insight": "Age/Comorbidities/Vizient",
+      "defaultOpen": false,
+      "headerHighlight": null,
+      "rows": [
+        {
+          "type": "standard",
+          "metric": "Risk adjustment",
+          "valA": "Vizient Comorbidities",
+          "valB": "Same"
+        }
+      ]
+    }
+  ],
+
+  "chartData": {
+    "trendData": [
+      { "name": "Jan '25", "highCostVal": 3050, "lowCostVal": 1620, "highCostMean": 3095, "lowCostMean": 1630, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Feb '25", "highCostVal": 2980, "lowCostVal": 1640, "highCostMean": 3095, "lowCostMean": 1630, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Mar '25", "highCostVal": 3200, "lowCostVal": 1610, "highCostMean": 3095, "lowCostMean": 1630, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Apr '25", "highCostVal": 3150, "lowCostVal": 1650, "highCostMean": 3095, "lowCostMean": 1630, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "May '25", "highCostVal": 3450, "lowCostVal": 1625, "highCostMean": 3095, "lowCostMean": 1630, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Jun '25", "highCostVal": 3100, "lowCostVal": 1635, "highCostMean": 3095, "lowCostMean": 1630, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Jul '25", "highCostVal": 2950, "lowCostVal": 1620, "highCostMean": 3095, "lowCostMean": 1630, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Aug '25", "highCostVal": 3080, "lowCostVal": 1645, "highCostMean": 3095, "lowCostMean": 1630, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Sep '25", "highCostVal": 3120, "lowCostVal": 1630, "highCostMean": 3095, "lowCostMean": 1630, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Oct '25", "highCostVal": 3500, "lowCostVal": 1615, "highCostMean": 3095, "lowCostMean": 1630, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Nov '25", "highCostVal": 3100, "lowCostVal": 1640, "highCostMean": 3095, "lowCostMean": 1630, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Dec '25", "highCostVal": 3095, "lowCostVal": 1632, "highCostMean": 3095, "lowCostMean": 1630, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": true,  "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false }
+    ],
+    "spcConfig": {
+      "highCost": { "mean": 3095, "sigma": 200 },
+      "lowCost":  { "mean": 1630, "sigma": 30 },
+      "forecastMonths": 6
+    }
+  },
+  "nextSteps": [
+    {
+      "title": "Suture Anchor Standardization",
+      "subtitle": "Reduce anchor count and standardize to lower-cost alternatives",
+      "type": "both",
+      "current": "Hartley uses premium Apex Surgical anchors (PivotLock $385, FiberGrip $420) at avg 5.4/case",
+      "target": "Align with peer protocol using HEALIX/DUOFIX anchors at ~3.2/case",
+      "savings": "$65,000 annually",
+      "savingsDetail": "$1,000 per case x 65 annual cases",
+      "complexity": "Medium",
+      "complexityDetail": "physician preference and technique alignment"
+    },
+    {
+      "title": "Biologics Protocol Alignment",
+      "subtitle": "Transition from dermal patch to selective PRP usage",
+      "type": "Price-driven",
+      "current": "Hartley uses DermaBridge dermal patch ($850-1,200) in 85% of cases",
+      "target": "Adopt Nguyen's selective PRP Dual Syringe approach ($285-350) in appropriate cases",
+      "savings": "$30,225 annually",
+      "savingsDetail": "$465 per case x 65 annual cases",
+      "complexity": "Low",
+      "complexityDetail": "evidence-based protocol substitution"
+    }
+  ],
+  "supplyCatalog": [
+    { "supply_id": "SUP-82010", "supply_name": "Apex PivotLock Knotless Anchor", "category": "Suture Anchors", "manufacturer": "Apex Surgical", "unit_cost": 385.00, "units_per_case_high": 3.2, "units_per_case_low": 0, "provider_high": "b4c1a827", "provider_low": "—", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "high" },
+    { "supply_id": "SUP-82015", "supply_name": "Apex FiberGrip Anchor", "category": "Suture Anchors", "manufacturer": "Apex Surgical", "unit_cost": 420.00, "units_per_case_high": 2.2, "units_per_case_low": 0, "provider_high": "b4c1a827", "provider_low": "—", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "high" },
+    { "supply_id": "SUP-82050", "supply_name": "Meridian HEALIX BIOSORB Anchor", "category": "Suture Anchors", "manufacturer": "Meridian Medical", "unit_cost": 265.00, "units_per_case_high": 0, "units_per_case_low": 2.1, "provider_high": "—", "provider_low": "d7f29e13", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "low" },
+    { "supply_id": "SUP-82055", "supply_name": "Meridian DUOFIX Pro HA Anchor", "category": "Suture Anchors", "manufacturer": "Meridian Medical", "unit_cost": 245.00, "units_per_case_high": 0, "units_per_case_low": 1.1, "provider_high": "—", "provider_low": "d7f29e13", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "low" },
+    { "supply_id": "SUP-90100", "supply_name": "Apex DermaBridge Acellular Dermal Matrix", "category": "Biologics", "manufacturer": "Apex Surgical", "unit_cost": 950.00, "units_per_case_high": 0.85, "units_per_case_low": 0, "provider_high": "b4c1a827", "provider_low": "—", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "high" },
+    { "supply_id": "SUP-90200", "supply_name": "Apex PRP Dual Syringe System", "category": "Biologics", "manufacturer": "Apex Surgical", "unit_cost": 315.00, "units_per_case_high": 0, "units_per_case_low": 0.6, "provider_high": "—", "provider_low": "d7f29e13", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "low" }
+  ],
+
+  "activeSPCPanel": null
+}

@@ -1,0 +1,267 @@
+{
+  "_comment": "Example: Total Knee Arthroplasty — matches the existing hardcoded card data",
+
+  "id": "opp-tka-001",
+
+  "meta": {
+    "category": "Supplies",
+    "serviceLine": "Orthopedics",
+    "departments": ["OR Main"],
+    "locations": ["North Campus"],
+    "patientTypes": ["Inpatient", "Outpatient"],
+    "providers": ["Susan Wilson", "Robert Chen"]
+  },
+
+  "header": {
+    "procedureTitle": "TOTAL KNEE ARTHROPLASTY",
+    "categoryLabel": "Supply Variation",
+    "categoryColor": "var(--brand-purple)",
+    "setting": "Outpatient",
+    "procedurePopover": {
+      "procedure": "TOTAL KNEE ARTHROPLASTY",
+      "procId": "OPP-1070003440-OUT-2412b776",
+      "setting": "Outpatient",
+      "cpts": ["27447"],
+      "drgs": []
+    },
+    "adjunctServices": [
+    ],
+    "statusInfo": null
+  },
+
+  "kpis": {
+    "savingsOpportunity": {
+      "estAnnualImpact": "$83K - $117K",
+      "midpoint": "$100K"
+    },
+    "highCostProvider": {
+      "id": "6e73ff31",
+      "name": "Susan Wilson",
+      "specialty": "Orthopedic Surgery",
+      "avgCostPerCase": "$5,200",
+      "casesPerYear": 234,
+      "savingsPerCase": "+$500",
+      "riskAdjustedProb": "98.6%",
+      "practiceSites": [
+        "St. Mary's Medical Center",
+        "Northwest Orthopedic Institute",
+        "Valley General Hospital",
+        "Riverside Surgical Center"
+      ],
+      "sparklineData": [
+        { "value": 5050 }, { "value": 5100 }, { "value": 4950 }, { "value": 5200 },
+        { "value": 5100 }, { "value": 5300 }, { "value": 5250 }, { "value": 5400 },
+        { "value": 5150 }, { "value": 5500 }
+      ]
+    },
+    "lowCostProvider": {
+      "id": "ae5b2ef4",
+      "name": "Robert Chen",
+      "specialty": "Orthopedic Surgery",
+      "avgCostPerCase": "$4,700",
+      "casesPerYear": 216,
+      "practiceSites": [
+        "Harbor View Medical Center",
+        "Pacific Orthopedic Group",
+        "Eastside Surgery Center",
+        "Bay Area Bone & Joint"
+      ],
+      "sparklineData": [
+        { "value": 4720 }, { "value": 4690 }, { "value": 4710 }, { "value": 4680 },
+        { "value": 4700 }, { "value": 4710 }, { "value": 4690 }, { "value": 4700 },
+        { "value": 4720 }, { "value": 4690 }, { "value": 4690 }
+      ]
+    },
+    "suppliesKeyDrivers": {
+      "drivers": [
+        "Premium Bone cement",
+        "Higher-cost knee implants"
+      ]
+    },
+    "providerPatterns": {
+      "providerSummary": "Uses bundled implants and premium bone cement, averaging ~$5,200 per case",
+      "peerSummary": "Uses itemized components and standard bone cement, averaging ~$4,700 per case"
+    }
+  },
+
+  "sections": [
+    {
+      "id": "cohort",
+      "title": "Procedure & Volume",
+      "iconName": "Users",
+      "insight": "Primary TKA, OP, adults 18+",
+      "defaultOpen": false,
+      "headerHighlight": null,
+      "providerColumns": {
+        "highProvider": { "id": "6e73ff31", "name": "Susan Wilson", "specialty": "Orthopedic Surgery" },
+        "lowProvider":  { "id": "ae5b2ef4", "name": "Robert Chen", "specialty": "Orthopedic Surgery" }
+      },
+      "rows": [
+        { "type": "standard", "metric": "Proc ID",              "valA": "OPP-1070003440-OUT-2412b776", "valB": "Same" },
+        { "type": "standard", "metric": "CPT Codes",            "valA": "27447", "valB": "Same" },
+        { "type": "standard", "metric": "Case volume (12 mo)",  "valA": "234 cases", "valB": "216 cases" }
+      ]
+    },
+    {
+      "id": "drivers",
+      "title": "Supplies - Cost Drivers",
+      "iconName": "SuppliesIconVector",
+      "insight": "Premium bone cement & implants",
+      "defaultOpen": true,
+      "headerHighlight": {
+        "label": "Savings/Case",
+        "value": "+$500/case",
+        "prob": "98.6% prob"
+      },
+      "providerColumns": {
+        "highProvider": { "id": "6e73ff31", "name": "Susan Wilson", "specialty": "Orthopedic Surgery" },
+        "lowProvider":  { "id": "ae5b2ef4", "name": "Robert Chen", "specialty": "Orthopedic Surgery" }
+      },
+      "rows": [
+      {
+        "type": "category-header",
+        "metric": "Most Common Supply Combination"
+      },
+      {
+        "type": "combo-summary",
+        "metric": "Top Combination",
+        "nameA": "ProFlex Total Knee + OrthoSet Premium",
+        "costA": "$5,200",
+        "useA": "High utilization (approx. 3.7 units)",
+        "nameB": "Itemized components + BondFix/AccuBond",
+        "costB": "$4,700",
+        "useB": "Standardized (approx. 2.2 units)",
+        "savings": "+$500 savings"
+      },
+      {
+        "type": "category-header",
+        "metric": "Bone Cement",
+        "badges": ["Price-Driven", "Use-Driven"],
+        "categorySavings": "+$45-$85/case"
+      },
+      {
+        "type": "supply-item",
+        "metric": "Primary",
+        "idA": "SUP-40281", "nameA": "OrthoSet Premium", "costA": "$123", "useA": "1.97", "maxUseA": "4.5",
+        "idB": "SUP-50391", "nameB": "BondFix Complete", "costB": "$166", "useB": "1.1", "maxUseB": "1.1",
+        "status": "Both", "statusType": "both"
+      },
+      {
+        "type": "supply-item",
+        "metric": "Secondary",
+        "idA": "SUP-40282", "nameA": "OrthoSet Standard", "costA": "$110", "useA": "1.75", "maxUseA": "4.1",
+        "idB": "SUP-50420", "nameB": "AccuBond Rapid Set", "costB": "$65", "useB": "1.05", "maxUseB": "2.2"
+      },
+      {
+        "type": "utilization",
+        "metric": "Utilization",
+        "valA": "Avg 3.72 units/case; high variability",
+        "valB": "Avg 2.15 units/case; low variability"
+      },
+      {
+        "type": "category-header",
+        "metric": "Implants",
+        "badges": ["Price-Driven"],
+        "categorySavings": "+$400-$500/case"
+      },
+      {
+        "type": "supply-item",
+        "metric": "Bundled vs Itemized",
+        "idA": "SUP-71050", "nameA": "ProFlex Total Knee", "costA": "$4,930 - $5,400", "useA": "1", "maxUseA": "1",
+        "idB": "SUP-71090", "nameB": "Apex Navigator System", "costB": "$3,678 - $4,215", "useB": "1", "maxUseB": "1",
+        "status": "Price-driven",
+        "bundledA": true,
+        "bundledIncludes": "Femoral, Patella, Tibial",
+        "itemizedB": [
+          { "name": "Femoral Component", "sku": "SUP-71090", "cost": "$1,720 - $1,950" },
+          { "name": "Tibial Component", "sku": "SUP-71091", "cost": "$1,498 - $1,750" },
+          { "name": "Patella Component", "sku": "SUP-71092", "cost": "$460 - $515" }
+        ],
+        "totalCostA": "$4,930 - $5,400",
+        "totalCostB": "$3,678 - $4,215"
+      },
+      {
+        "_comment": "Legacy row kept for header-highlight compatibility",
+        "type": "standard",
+        "metric": "Avg supply cost / case",
+        "valA": "$5,200", "valB": "$4,700",
+        "highlightA": true
+      }
+    ]
+    },
+    {
+      "id": "quality",
+      "title": "Quality & Risk",
+      "iconName": "AlertCircle",
+      "insight": "Age/Comorbidities/Vizient",
+      "defaultOpen": false,
+      "headerHighlight": null,
+      "rows": [
+        {
+          "type": "standard",
+          "metric": "Risk adjustment",
+          "valA": "Vizient Comorbidities",
+          "valB": "Same"
+        }
+      ]
+    }
+  ],
+
+  "chartData": {
+    "trendData": [
+      { "name": "Jan '25", "highCostVal": 5250, "lowCostVal": 4710, "highCostMean": 5200, "lowCostMean": 4700, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Feb '25", "highCostVal": 5050, "lowCostVal": 4685, "highCostMean": 5200, "lowCostMean": 4700, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Mar '25", "highCostVal": 5400, "lowCostVal": 4720, "highCostMean": 5200, "lowCostMean": 4700, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Apr '25", "highCostVal": 5150, "lowCostVal": 4690, "highCostMean": 5200, "lowCostMean": 4700, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "May '25", "highCostVal": 5650, "lowCostVal": 4715, "highCostMean": 5200, "lowCostMean": 4700, "highLimitViolation": true,  "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Jun '25", "highCostVal": 5300, "lowCostVal": 4680, "highCostMean": 5200, "lowCostMean": 4700, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Jul '25", "highCostVal": 5100, "lowCostVal": 4705, "highCostMean": 5200, "lowCostMean": 4700, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Aug '25", "highCostVal": 5080, "lowCostVal": 4695, "highCostMean": 5200, "lowCostMean": 4700, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Sep '25", "highCostVal": 5120, "lowCostVal": 4710, "highCostMean": 5200, "lowCostMean": 4700, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Oct '25", "highCostVal": 5720, "lowCostVal": 4690, "highCostMean": 5200, "lowCostMean": 4700, "highLimitViolation": true,  "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Nov '25", "highCostVal": 5210, "lowCostVal": 4700, "highCostMean": 5200, "lowCostMean": 4700, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": false, "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false },
+      { "name": "Dec '25", "highCostVal": 5205, "lowCostVal": 4708, "highCostMean": 5200, "lowCostMean": 4700, "highLimitViolation": false, "highRunViolation": false, "highDetectedChange": true,  "lowLimitViolation": false, "lowRunViolation": false, "lowDetectedChange": false }
+    ],
+    "spcConfig": {
+      "highCost": { "mean": 5200, "sigma": 150 },
+      "lowCost":  { "mean": 4700, "sigma": 25 },
+      "forecastMonths": 6
+    }
+  },
+  "nextSteps": [
+    {
+      "title": "Bone Cement Standardization",
+      "subtitle": "Standardize to lower-cost alternatives",
+      "type": "both",
+      "current": "Wilson uses OrthoSet products ($110-123) at ~1.9 units/case",
+      "target": "Switch to AccuBond Rapid Set ($65.26) and align utilization",
+      "savings": "$14,040 annually",
+      "savingsDetail": "$60 per case × 234 annual cases",
+      "complexity": "Low",
+      "complexityDetail": "direct product substitution"
+    },
+    {
+      "title": "Implant System Alignment",
+      "subtitle": "Transition from bundled to itemized Apex system",
+      "type": "Price-driven",
+      "current": "Wilson uses high-cost ProFlex bundled system ($4,930)",
+      "target": "Adopt Chen's Apex Navigator itemized approach ($3,678)",
+      "savings": "$93,600 annually",
+      "savingsDetail": "$400 per case × 234 annual cases",
+      "complexity": "Medium",
+      "complexityDetail": "physician preference alignment"
+    }
+  ],
+  "supplyCatalog": [
+    { "supply_id": "SUP-40281", "supply_name": "OrthoSet Premium Bone Cement 40g", "category": "Bone Cement", "manufacturer": "Meridian Surgical", "unit_cost": 123.00, "units_per_case_high": 1.97, "units_per_case_low": 0, "provider_high": "6e73ff31", "provider_low": "\u2014", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "high" },
+    { "supply_id": "SUP-40282", "supply_name": "OrthoSet Standard Bone Cement 20g", "category": "Bone Cement", "manufacturer": "Meridian Surgical", "unit_cost": 110.00, "units_per_case_high": 1.75, "units_per_case_low": 0, "provider_high": "6e73ff31", "provider_low": "\u2014", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "high" },
+    { "supply_id": "SUP-50391", "supply_name": "BondFix Complete Bone Cement", "category": "Bone Cement", "manufacturer": "Apex Orthopedics", "unit_cost": 165.75, "units_per_case_high": 0, "units_per_case_low": 1.1, "provider_high": "\u2014", "provider_low": "ae5b2ef4", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "low" },
+    { "supply_id": "SUP-50420", "supply_name": "AccuBond Rapid Set Cement", "category": "Bone Cement", "manufacturer": "Ascend Medical", "unit_cost": 65.26, "units_per_case_high": 0, "units_per_case_low": 1.05, "provider_high": "\u2014", "provider_low": "ae5b2ef4", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "low" },
+    { "supply_id": "SUP-71050", "supply_name": "ProFlex Total Knee System", "category": "Implants", "manufacturer": "ProFlex Medical", "unit_cost": 4930.00, "units_per_case_high": 1.00, "units_per_case_low": 0, "provider_high": "6e73ff31", "provider_low": "\u2014", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "high" },
+    { "supply_id": "SUP-71090", "supply_name": "Apex Navigator Femoral", "category": "Implants", "manufacturer": "Apex Orthopedics", "unit_cost": 1720.00, "units_per_case_high": 0, "units_per_case_low": 1.00, "provider_high": "\u2014", "provider_low": "ae5b2ef4", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "low" },
+    { "supply_id": "SUP-71091", "supply_name": "Apex Navigator Tibial", "category": "Implants", "manufacturer": "Apex Orthopedics", "unit_cost": 1498.00, "units_per_case_high": 0, "units_per_case_low": 1.00, "provider_high": "\u2014", "provider_low": "ae5b2ef4", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "low" },
+    { "supply_id": "SUP-71092", "supply_name": "Apex Navigator Patella 32mm", "category": "Implants", "manufacturer": "Apex Orthopedics", "unit_cost": 460.00, "units_per_case_high": 0, "units_per_case_low": 1.00, "provider_high": "\u2014", "provider_low": "ae5b2ef4", "hcpcs_code": "—", "payer_mix": "Medicare/Commercial", "cost_flag": "low" }
+  ],
+
+  "activeSPCPanel": null
+}
